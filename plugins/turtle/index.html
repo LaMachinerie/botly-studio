@@ -1,0 +1,47 @@
+<script src="./plugins/turtle/js/index.js"></script>
+<script src="./plugins/turtle/js/lib/canvas/canvas.js"></script>
+<script src="./plugins/turtle/js/lib/jsInterpreter/acorn_interpreter.js"></script>
+<script src="./plugins/turtle/js/lib/slider/slider.js"></script>
+<link rel="stylesheet" href="./plugins/turtle/assets/style.css">
+
+<!--script src="./js/index.js"></script>
+<script src="./js/lib/canvas/canvas.js"></script>
+<script src="./js/lib/jsInterpreter/acorn_interpreter.js"></script>
+<script src="./js/lib/slider/slider.js"></script>
+<link rel="stylesheet" href="./assets/style.css"-->
+
+<div id='visualization' class='content' wrap='soft'>
+    <div class='scrollbar' id='style-10'>
+
+        <div id='canvasContainer'></div>
+        <div class="row">
+            <svg id='speed_slider' class="col s12 m12 l6 right" xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='150' height='50' class='slider2'>
+                <!-- Slow icon. -->
+                <clipPath id='slowClipPath'>
+                    <rect width='26' height='12' x='5' y='14'></rect>
+                </clipPath>
+                <image xlink:href='./plugins/turtle/assets/icons.png' height='42' width='84' x='-21' y='-10'
+                    clip-path='url(#slowClipPath)'></image>
+                <!--image xlink:href='./assets/icons.png' height='42' width='84' x='-21' y='-10'
+                    clip-path='url(#slowClipPath)'></image-->
+                <!-- Fast icon. -->
+                <clipPath id='fastClipPath'>
+                    <rect width='26' height='16' x='120' y='10'></rect>
+                </clipPath>
+                <image xlink:href='./plugins/turtle/assets/icons.png' height='42' width='84' x='120' y='-11'
+                    clip-path='url(#fastClipPath)'></image>
+                <!--image xlink:href='./assets/icons.png' height='42' width='84' x='120' y='-11'
+                    clip-path='url(#fastClipPath)'></image-->
+            </svg>
+            <div class="col s12 m12 l6 center">
+                <i id="centerClipPath" class="small material-icons" style="line-height: 2">gps_fixed</i>
+                <i id="zoomInClipPath" class="small material-icons" style="line-height: 2">zoom_in</i>
+                <i id="zoomOutClipPath" class="small material-icons" style="line-height: 2">zoom_out</i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    Turtle.init();
+</script>

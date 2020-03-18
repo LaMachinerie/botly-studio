@@ -1,0 +1,9 @@
+[submodule "js/lib/canvas"]
+	path = js/lib/canvas
+	url = git@gitlab.com:lamachinerie/botly/botlystudio/js-libraries/Canvas.git
+[submodule "js/lib/slider"]
+	path = js/lib/slider
+	url = git@gitlab.com:lamachinerie/botly/botlystudio/js-libraries/slider.git
+[submodule "js/lib/jsInterpreter"]
+	path = js/lib/jsInterpreter
+	url = git@gitlab.com:lamachinerie/botly/botlystudio/js-libraries/JS-Interpreter.git

@@ -1,0 +1,164 @@
+<script src="./plugins/robot/js/index.js"></script>
+<link rel="stylesheet" href="./plugins/robot/assets/style.css">
+
+<!--script src="./js/robot.js"></script>
+<link rel="stylesheet" href="./assets/robot.css"-->
+<div id="loader_wrapper" class='loader_wrapper'>
+    <div class="loader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+<p id="state_msg" class="loading_text center">Attente</p>
+
+
+<div id="error_wrapper" class="visibility">
+    <div class="card-content white-text">
+        <span class="card-title">Un problème est survenu</span>
+        <p id="error_msg"></p>
+        <div class='center' style='margin-top:5%;'>
+            <a id="action_button" class="arduino_orange center waves-effect waves-light btn"> </a>
+        </div>
+        <div class='center' style='margin-top:5%;'>
+            <a id="download_button" class="visibility">Télécharger l'agent</a>
+        </div>
+        <div class='center' style='margin-top:5%;'>
+            <a id="reset_button" class="visibility">Recommencer la procédure</a>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="step1">
+</div>
+<div id="step2">
+</div>
+<div id="step4">
+</div>
+<div id="step3">
+    <div class="card z-depth-0" frame>
+        <div class="card-tabs">
+            <ul id="steps_tabs" class="tabs visibility" hidden>
+                <li class="tab"><a class="active" href="#tab1">Étape 1</a></li>
+                <li class="tab"><a href="#tab2">Étape 2</a></li>
+                <li class="tab"><a href="#tab3">Étape 3</a></li>
+                <li class="tab"><a href="#tab4">Étape 4</a></li>
+            </ul>
+        </div>
+
+        <div id="tab1" class="frame">
+            <div class="card-image">
+                <img src="plugins/robot/assets/img/step1.jpeg">
+                <div class="right">
+                    <a style="transform: translate(-20px, -22px);" class='prev waves-effect waves-light waves-circle btn-small btn-floating blue'><i class='material-icons small'>navigate_before</i></a>
+                    <!--a id='prev' style="transform: translate(-20px, -28px);" class="waves-effect waves-light waves-circle btn-floating green"><i id="floating_help" class="material-icons small">help</i></a-->
+                    <a style="transform: translate(-20px, -22px);" class="next waves-effect waves-light waves-circle btn-large btn-floating red"><i class="large material-icons left">navigate_next</i></a>
+                </div>
+            </div>
+            <div class="card-content">
+                <span class="card-title">Brancher le robot</span>
+                <p>Pour pouvoir envoyer votre programme dans le robot, assurer vous de brancher le cable USB</p>
+            </div>
+        </div>
+        <div id="tab2" class="frame">
+            <div class="card-image">
+                <img src="plugins/robot/assets/img/step2.jpeg">
+                <div class="right">
+                    <a style="transform: translate(-20px, -22px);" class='prev waves-effect waves-light waves-circle btn-small btn-floating blue'><i class='material-icons small'>navigate_before</i></a>
+                    <!--a id='prev' style="transform: translate(-20px, -28px);" class="waves-effect waves-light waves-circle btn-floating green"><i id="floating_help" class="material-icons small">help</i></a-->
+                    <a style="transform: translate(-20px, -22px);" class="next waves-effect waves-light waves-circle btn-large btn-floating red"><i class="large material-icons left">navigate_next</i></a>
+                </div>
+            </div>
+            <div class="card-content">
+                <span class="card-title">Alumer le robot</span>
+                <p>Vous pouvez allumer le robot, en basculant l'interupteur vers la gauche</p>
+            </div>
+        </div>
+        <div id="tab3" class="frame">
+            <div class="card-image">
+                <img src="plugins/robot/assets/img/step3.jpeg">
+                <div class="right">
+                    <a style="transform: translate(-20px, -22px);" class='prev waves-effect waves-light waves-circle btn-small btn-floating blue'><i class='material-icons small'>navigate_before</i></a>
+                    <!--a id='prev' style="transform: translate(-20px, -28px);" class="waves-effect waves-light waves-circle btn-floating green"><i id="floating_help" class="material-icons small">help</i></a-->
+                    <a style="transform: translate(-20px, -22px);" class="next waves-effect waves-light waves-circle btn-large btn-floating red"><i class="large material-icons left">navigate_next</i></a>
+                </div>
+            </div>
+            <div class="card-content">
+                <span class="card-title">Vérifier que le robot est allumé</span>
+                <p>Si le robot est allumé une lumière rouge devrait s'être allumée à côté de l'interupteur</p>
+            </div>
+        </div>
+        <div id="tab4" class="frame">
+            <div class="card-image">
+                <img src="plugins/robot/assets/img/step4.jpeg">
+                <div class="right">
+                    <a style="transform: translate(-20px, -22px);" class='prev waves-effect waves-light waves-circle btn-small btn-floating blue'><i class='material-icons small'>navigate_before</i></a>
+                    <!--a id='prev' style="transform: translate(-20px, -28px);" class="waves-effect waves-light waves-circle btn-floating green"><i id="floating_help" class="material-icons small">help</i></a-->
+                    <a style="transform: translate(-20px, -22px);" class="next waves-effect waves-light waves-circle btn-large btn-floating red"><i class="large material-icons left">navigate_next</i></a>
+                </div>
+            </div>
+            <div class="card-content">
+                <span class="card-title">Placer le robot sur le côté</span>
+                <p>Lorsque le robot est allumé, il est possible qu'il commence à se déplacer. En effet il y a peut être un programme déjà enregistré à l'interieur qui risque de s'executer dès que le son de démarage retenti.</p>
+                <p>Afin d'éviter que le robot ne se déplace vous pouver le poser sur le flanc</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<div id="step5">
+    <div id="sucess_wrapper" class="card blue-grey darken-1">
+        <div class="card-content white-text">
+            <span class="card-title center">Le robot est bientôt prêt ! </span>
+            <div class="card-content center">
+                <p>Attendez le son de démarage, avant de commencer !</p>
+                <div class='center'><i class='material-icons'>music_note</i></div>
+
+            </div>
+            <p id="success_msg"></p>
+            <div class='center' style='margin-top:5%;'>
+                <a id="upload_new" class="arduino_orange center waves-effect waves-light btn">Envoyer un nouveau programme</a>
+            </div>
+            <div class='center' style='margin-top:5%;'>
+                <a id="upload_again" class="arduino_orange center waves-effect waves-light btn">Réenvoyer le programme</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div>
+    <ul id="robot_tabs" class="tabs visibility" hidden>
+        <li class="tab col s3"><a class="active" href="#step1">Agent</a></li>
+        <li class="tab col s3"><a href="#step2">Compilation</a></li>
+        <li class="tab col s3"><a href="#step3">Allumage</a></li>
+        <li class="tab col s3"><a href="#step4">Préparation</a></li>
+        <li class="tab col s3"><a href="#step5">Téléversement</a></li>
+    </ul>
+</div>
+
+<nav class="dot center-align">
+    <div class="nav-wrapper">
+        <div id="breadcrumb_wrapper" class="col s12">
+            <a class="breadcrumb current"><i class="material-icons">swap_vertical_circle</i></a>
+            <a class="breadcrumb _next"><i class="material-icons">code</i></a>
+            <a class="breadcrumb _next"><i class="material-icons">power</i></a>
+            <a class="breadcrumb _next"><i class="material-icons">settings</i></a>
+            <a class="breadcrumb _next"><i class="material-icons">flash_on</i></a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    Robot.init();
+</script>
