@@ -27,11 +27,11 @@
 
 .scrollbar {
     float: left;
-    height: 100%;
-    width: 100%;
     background: #ffffff;
     overflow-y: auto;
     overflow-x: hidden;
+
+    height: 100%
 }
 
 #style-10::-webkit-scrollbar {
@@ -44,7 +44,7 @@
 
 #style-10::-webkit-scrollbar-thumb {
     position: relative;
-    border-radius: 11px;
+    border-radius: 15px;
     background: #f47a4298;
-    transform: translate(-50%);
+    transform: translate(-60%);
 }

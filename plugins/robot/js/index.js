@@ -179,22 +179,18 @@ Robot.updateTab = function () {
             Robot.hideText();
             break;
         case 3:
-            Robot.showLoader();
-            Robot.hideButton();
-            Robot.setInfoText("Initialisation de la communication série")
-            Robot.checkSerial();
+            Robot.next();
             break;
         case 4:
             Robot.showLoader();
             Robot.hideButton();
-            Robot.setInfoText("Compilation")
-            Robot.compile();
-            break;
-        case 5:
-            Robot.showLoader();
-            Robot.hideButton();
             Robot.setInfoText("Téléversement")
             Robot.upload();
+            break;
+        case 5:
+            Robot.hideLoader();
+            Robot.hideButton();
+            Robot.hideText();
             break;
         default:
             break;
@@ -224,7 +220,7 @@ Robot.error = function () {
             break;
         case 4:
             Robot.hideLoader();
-            Robot.setErrorText("La compilation a échouée")
+            Robot.setErrorText("Le téléversement a échouée")
             Robot.setActionButton("Reéssayer", "refresh", function () {
                 Robot.updateTab();
             });
@@ -277,7 +273,7 @@ Robot.offline = function (err, status) {
 }
 
 Robot.compile = function () {
-    BotlyAPI.compile(BotlyAPI.getCode('Arduino'), { success: Robot.compileSuccess, fail: Robot.compileFail, offline: Robot.offline });
+
 }
 
 
@@ -288,10 +284,11 @@ Robot.uploadFail = function () {
 Robot.uploadSuccess = function () {
     Robot.hideLoader();
     Robot.hideText();
+    Robot.next();
 }
 
 Robot.upload = function () {
-    BotlyAPI.upload(Robot.compiledHex, { success: Robot.uploadSuccess, fail: Robot.uploadFail });
+    BotlyAPI.upload(BotlyAPI.getCode('Arduino'), { success: Robot.uploadSuccess, fail: Robot.uploadFail });
 }
 
 
