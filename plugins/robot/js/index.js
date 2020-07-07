@@ -16,9 +16,9 @@ Robot.init = function () {
 
     Robot.bindelement('download_button', function () {
         if (isMacintosh()) {
-            window.open("https://github.com/Botly-Studio/uploadAgent/releases/download/1.0.10/BotlyStudio-Agent_MacOS.app.zip");
+            window.open("https://github.com/Botly-Studio/Botly-Agent/releases/download/litchee/Botly-Agent.zip");
         } else if (isWindows()) {
-            window.open("https://github.com/Botly-Studio/uploadAgent/releases/download/1.0.10/BotlyStudio-Agent_Windows_x64_x86.exe");
+            window.open("https://github.com/Botly-Studio/Botly-Agent/releases/download/litchee/Botly-Agent_Windows_x64_x86.exe");
         }
     });
 
