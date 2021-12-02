@@ -23,4 +23,4 @@ jobs:
           ENTRYPOINT: http
           NETWORK: machinerie-network
       - name: HTTP test
-        run: docker run --network container:code-ta-bd appropriate/curl -s --retry 10 --retry-connrefused http://localhost:8080/
+        run: docker run --network container:botly-studio appropriate/curl -s --retry 10 --retry-connrefused http://localhost:8080/
