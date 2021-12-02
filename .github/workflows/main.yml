@@ -21,5 +21,6 @@ jobs:
         run: docker-compose up -d
         env:
           ENTRYPOINT: http
+          NETWORK: machinerie-network
       - name: HTTP test
         run: docker run --network container:code-ta-bd appropriate/curl -s --retry 10 --retry-connrefused http://localhost:8080/
