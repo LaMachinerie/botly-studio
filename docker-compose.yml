@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  apache:
+    image: 'bitnami/apache:latest'
+    container_name: $NAME
+    volumes:
+      - .:/app
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.$NAME.entrypoints=$ENTRYPOINT"
+      - "traefik.http.routers.$NAME.rule=Host(`$DOMAIN`)"
+    networks:
+      - $NETWORK
+    restart: always
+
+networks:
+  machinerie-network:
+    external:
+      name: $NETWORK

@@ -1,0 +1,23 @@
+
+name: Build & Test
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Create the network
+        run: docker network create machinerie-network
+      - name: Build the stack
+        run: docker-compose up -d
+      - name: HTTP test
+        run: docker run --network container:code-ta-bd appropriate/curl -s --retry 10 --retry-connrefused http://localhost:8080/
