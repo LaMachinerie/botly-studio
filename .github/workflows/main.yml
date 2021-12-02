@@ -19,5 +19,7 @@ jobs:
         run: docker network create machinerie-network
       - name: Build the stack
         run: docker-compose up -d
+        env:
+          ENTRYPOINT: http
       - name: HTTP test
         run: docker run --network container:code-ta-bd appropriate/curl -s --retry 10 --retry-connrefused http://localhost:8080/
